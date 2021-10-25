@@ -14,6 +14,16 @@ public class homework_2 {
 
 		System.out.print("Ievadiet ciparu pa Y asi: ");
 		int y = in.nextInt();
+		
+		if((x > -2 && x < 3) && (y > -4 && y < 1)) {
+			System.out.println(" X,Y koordinâtas ir figûras iekðienç");
+		} else if((x >= -2 && x <= 3) && (y >= -4 && y <= 1)) {
+			System.out.println("X,Y koordinâtas ir figûrai uz lînijas");
+		} else {
+			System.out.println("X,Y koordinâtas ir figûras ârpusç");
+		}
+		
+		
 	}
 
 }

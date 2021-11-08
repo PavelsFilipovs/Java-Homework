@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class SortArray {
 
 	public static void main(String[] args) {
-		int arrLenght, min = 10, max = 99; /// min_10
+		int arrLenght, min = 10, max = 99; 
 		Scanner scan = new Scanner(System.in);
 		int[] arr;
 		

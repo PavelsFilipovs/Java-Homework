@@ -10,7 +10,7 @@ public class ToDoItems_Structure {
 	static ArrayList<ToDoItem> toDoItemArr = new ArrayList<ToDoItem>();
 	
 	public ToDoItems_Structure() {
-		editThreeThinks();
+		editFiveThinks();
 		listName = listName();
 		what_ToDo();
 		what_ToDo_Case(scanner.next());
@@ -54,7 +54,8 @@ public class ToDoItems_Structure {
 			what_ToDo();
 			break;
 		case "4":
-			System.out.println("Thursday");
+			displayUncomplete_Items();
+			what_ToDo();
 			break;
 		case "5":
 			System.out.println("Friday");
@@ -131,7 +132,7 @@ public class ToDoItems_Structure {
 		
 	}
 	
-	static void editThreeThinks() {
+	static void editFiveThinks() {
 
 		ToDoItem soom = new ToDoItem();
 		soom.setDescription("Iznest miskasti");
@@ -141,17 +142,29 @@ public class ToDoItems_Structure {
 		ToDoItem soom1 = new ToDoItem();
 		soom1.setDescription("Paçst");
 		soom1.setPriority(Priority.MEDIUM);
-		
+
 		ToDoItem soom2 = new ToDoItem();
 		soom2.setDescription("Aziet uz veikalu");
 		soom2.setPriority(Priority.HIGH);
+		
+		ToDoItem soom3 = new ToDoItem();
+		soom3.setDescription("Nolikt gulçt bçrnu");
+		soom3.setPriority(Priority.LOW);
+		
+		ToDoItem soom4 = new ToDoItem();
+		soom4.setDescription("Izmazgât veïu");
+		soom4.setPriority(Priority.MEDIUM);
+		soom4.setCompleted(true);
 
 		toDoItemArr.add(soom);
 		toDoItemArr.add(soom1);
 		toDoItemArr.add(soom2);
+		toDoItemArr.add(soom3);
+		toDoItemArr.add(soom4);
 	}
 	
 	static void displayAllItems() {
+
 		for (int i = 0; i < toDoItemArr.size(); i++) {
 			String complite = (toDoItemArr.get(i).getCompleted() == true) ? "Yes" : "No";
 			System.out.print("Description: " + toDoItemArr.get(i).getDescription());
@@ -160,4 +173,18 @@ public class ToDoItems_Structure {
 			System.out.println();
 		}
 	}
+
+	static void displayUncomplete_Items() {
+		
+		for (int i = 0; i < toDoItemArr.size(); i++) {
+			String complite = "No";
+			if (toDoItemArr.get(i).getCompleted() == false) {
+				System.out.print("Description: " + toDoItemArr.get(i).getDescription());
+				System.out.print(", Priority: " + toDoItemArr.get(i).getPriority());
+				System.out.print(", Completed: " + complite);
+				System.out.println();
+			}
+		}
+	}
+	
 }

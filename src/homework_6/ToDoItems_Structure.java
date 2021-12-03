@@ -50,7 +50,8 @@ public class ToDoItems_Structure {
 			what_ToDo_Case(scanner.next());
 			break;
 		case "3":
-			System.out.println("Wednesday");
+			displayAllItems();
+			what_ToDo();
 			break;
 		case "4":
 			System.out.println("Thursday");
@@ -118,7 +119,7 @@ public class ToDoItems_Structure {
 		}
 		if (flag == false) {
 			System.out.print(   "Task don't find!\n" +
-								"Insert one more time correct task or 'q' to quit...");
+								"Insert one more time correct task or 'q' to go main MENU...");
 			task = scanner.nextLine();
 			if (task.equals("q")) {
 				what_ToDo();
@@ -135,6 +136,7 @@ public class ToDoItems_Structure {
 		ToDoItem soom = new ToDoItem();
 		soom.setDescription("Iznest miskasti");
 		soom.setPriority(Priority.HIGH);
+		soom.setCompleted(true);
 		
 		ToDoItem soom1 = new ToDoItem();
 		soom1.setDescription("Paçst");
@@ -149,5 +151,13 @@ public class ToDoItems_Structure {
 		toDoItemArr.add(soom2);
 	}
 	
-	
+	static void displayAllItems() {
+		for (int i = 0; i < toDoItemArr.size(); i++) {
+			String complite = (toDoItemArr.get(i).getCompleted() == true) ? "Yes" : "No";
+			System.out.print("Description: " + toDoItemArr.get(i).getDescription());
+			System.out.print(", Priority: " + toDoItemArr.get(i).getPriority());
+			System.out.print(", Completed: " + complite);
+			System.out.println();
+		}
+	}
 }

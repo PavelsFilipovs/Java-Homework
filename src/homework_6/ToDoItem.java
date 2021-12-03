@@ -21,7 +21,7 @@ public class ToDoItem {
 	}
 	
 	
-	public boolean isCompleted() {
+	public boolean getCompleted() {
 		return completed;
 	}
 	public void setCompleted(boolean completed) {

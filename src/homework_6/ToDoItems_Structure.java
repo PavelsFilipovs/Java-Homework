@@ -30,7 +30,7 @@ public class ToDoItems_Structure {
 							"3. Display all To-Do Items\n" + 
 							"4. Display uncompleted To-Do Items\n" +
 							"5. Display completed To-Do Items\n" +
-							"6. Close all program press 'q'");
+							"* Close all program press 'q'");
 	}
 	
 	static void what_ToDo_Case(String option) {
@@ -52,13 +52,17 @@ public class ToDoItems_Structure {
 		case "3":
 			displayAllItems();
 			what_ToDo();
+			what_ToDo_Case(scanner.next());
 			break;
 		case "4":
 			displayUncomplete_Items();
 			what_ToDo();
+			what_ToDo_Case(scanner.next());
 			break;
 		case "5":
-			System.out.println("Friday");
+			displayComplete_Items();
+			what_ToDo();
+			what_ToDo_Case(scanner.next());
 			break;
 		case "q":
 			break;
@@ -186,5 +190,19 @@ public class ToDoItems_Structure {
 			}
 		}
 	}
+
+	static void displayComplete_Items() {
+		
+		for (int i = 0; i < toDoItemArr.size(); i++) {
+			String complite = "Yes";
+			if (toDoItemArr.get(i).getCompleted() == true) {
+				System.out.print("Description: " + toDoItemArr.get(i).getDescription());
+				System.out.print(", Priority: " + toDoItemArr.get(i).getPriority());
+				System.out.print(", Completed: " + complite);
+				System.out.println();
+			}
+		}
+	}
+	
 	
 }
